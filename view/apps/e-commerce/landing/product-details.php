@@ -77,7 +77,7 @@ require_once(__DIR__ . "/../../../../functions/marketplace/detail_product_func.p
         if (isset($_GET['id'])) {
           $product_id_string = $_GET['id'];
           $product_id = (int)$product_id_string;
-          productById($product_id);
+          // productById($product_id);
         } else {
           $product_id = null;
         }
@@ -126,8 +126,8 @@ require_once(__DIR__ . "/../../../../functions/marketplace/detail_product_func.p
 
 
 
-                    <span class="fas fa-shopping-cart me-2"></span>Add to cart
-                  </a>
+                    <!-- <span class="fas fa-shopping-cart me-2"></span>Add to cart
+                  </a> -->
                   <!-- <li><a title="Add To Cart" href="../actions/addcart_action.php?pid=<?=$products[$i]['product_id']?>&quantity=1"><span class="ti-shopping-cart"></span></a></li> -->
                 </div>
               </div>
@@ -179,7 +179,7 @@ require_once(__DIR__ . "/../../../../functions/marketplace/detail_product_func.p
 
       <!-- ============================================-->
       <!-- <section> begin ============================-->
-      <section class="py-0 mb-9">
+      <section class="py-0 pb-4 mb-9">
         <div class="container">
           <div class="d-flex flex-between-center mb-3">
             <div>
@@ -210,9 +210,14 @@ require_once(__DIR__ . "/../../../../functions/marketplace/detail_product_func.p
       <!-- ============================================-->
 
 
-      <?php include "../../../components/footer.php" ?>
+      <?php 
+      // include "../../../components/footer.php" 
+      ?>
 
-      <?php include "../../../components/small_footer.php" ?>
+<?php include "../../../components/small_footer.php" ?>
+
+
+      
 
     </main>
     <!-- ===============================================-->

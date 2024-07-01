@@ -99,7 +99,7 @@ require_once(__DIR__ . "/../../../../functions/marketplace/bestoffers_view_func.
             <!-- ===============================================-->
             <!--    Best Offers  Content-->
             <!-- ===============================================-->
-            <div class="mb-6">
+            <div class="mb-6 pb-5">
               <div class="d-flex flex-between-center mb-3">
                 <h3>Best Offers</h3><a class="fw-bold d-none d-md-block" href="#!">Explore more<span class="fas fa-chevron-right fs-9 ms-1"></span></a>
               </div>
@@ -243,7 +243,7 @@ require_once(__DIR__ . "/../../../../functions/marketplace/bestoffers_view_func.
       
 
       <?php 
-      include "../../../components/footer.php" 
+      // include "../../../components/footer.php" 
        ?>
 
       

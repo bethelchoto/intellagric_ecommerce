@@ -5,7 +5,15 @@
 <!--    Import html Head -->
 <!-- ===============================================-->
 
-<?php include "components/ecommerce_html_head.php" ?>
+<?php 
+  include "components/ecommerce_html_head.php";
+
+?>
+
+
+
+
+
 
   <body>
     <!-- ===============================================-->
@@ -17,6 +25,10 @@
     <?php 
     include "components/header.php"; 
     include "components/categories/farm_produce_navbar.php"; 
+    include "../../../../controllers/marketplace/product_controller.php";
+
+    global $result; // Declare $result as a global variable
+    global $amount; // Declare $result as a global variable
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $amount = $_POST['amount'];
@@ -37,11 +49,12 @@
               <li class="breadcrumb-item active" aria-current="page">Default</li>
             </ol>
           </nav>
-          <h2 class="mb-5">Check out</h2>
+          <h2 class="mb-0">Check out</h2>
           <div class="row justify-content-between">
-            <div class="col-lg-7 col-xl-7">
+            <div class="col-lg-7 col-xl-7 pb-5">
               <form>
-                <div class="d-flex align-items-end">
+
+                <!-- <div class="d-flex align-items-end">
                   <h3 class="mb-0 me-3">Shipping Details</h3><button class="btn btn-link p-0" type="button">Edit</button>
                 </div>
                 <table class="table table-borderless mt-4">
@@ -80,9 +93,10 @@
                       </td>
                     </tr>
                   </tbody>
-                </table>
+                </table> -->
                 <hr class="my-6">
                 <h3>Billing Details</h3>
+
                 <div class="form-check"><input class="form-check-input" id="sameAsShipping" type="checkbox" checked="checked" /><label class="form-check-label fs-8 fw-normal" for="sameAsShipping">Same as shipping address
                   </label></div>
                 <table class="table table-borderless mt-4">
@@ -95,7 +109,7 @@
                       </td>
                       <td class="py-2 fw-bold lh-sm">:</td>
                       <td class="py-2 px-3">
-                        <h5 class="lh-sm fw-normal text-body-secondary">Shatinon Mekalan</h5>
+                        <h5 class="lh-sm fw-normal text-body-secondary">Intelliagric User 1</h5>
                       </td>
                     </tr>
                     <tr>
@@ -106,66 +120,28 @@
                       </td>
                       <td class="py-2 fw-bold lh-sm">:</td>
                       <td class="py-2 px-3">
-                        <h5 class="lh-lg fw-normal text-body-secondary">Apt: 6/B, 192 Edsel Road, Van Nuys <br> California, USA 96580</h5>
+                        <h5 class="lh-lg fw-normal text-body-secondary">12345 Magamba Way</h5>
                       </td>
                     </tr>
                     <tr>
                       <td class="py-2 ps-0">
                         <div class="d-flex"><span class="fs-3 me-2" data-feather="phone" style="height:16px; width:16px;"> </span>
-                          <h5 class="lh-sm me-4">Phone</h5>
+                          <h5 class="lh-sm me-4">Email</h5>
                         </div>
                       </td>
                       <td class="py-2 fw-bold lh-sm">:</td>
                       <td class="py-2 px-3">
-                        <h5 class="lh-sm fw-normal text-body-secondary">818-414-4092</h5>
+                        <h5 class="lh-sm fw-normal text-body-secondary"><?php echo $_SESSION['username'] ?></h5>
                       </td>
                     </tr>
                   </tbody>
                 </table>
-                <hr class="my-6">
-                <h3 class="mb-5">Delivery Type</h3>
-                <div class="row gy-6">
-                  <div class="col-12 col-md-6">
-                    <div class="d-flex flex-wrap align-items-center mb-3">
-                      <div class="form-check mb-0"><input class="form-check-input" type="radio" name="shippingRadio" id="free_shipping" /><label class="form-check-label fs-8 text-body" for="free_shipping">Free Shipping</label></div><span class="d-inline-block text-body-emphasis fw-bold ms-2">$0.00</span>
-                    </div>
-                    <div class="ps-4">
-                      <h6 class="text-body-tertiary mb-2">Est. delivery:Jun 21 – Jul 20</h6>
-                      <h6 class="text-info lh-base mb-0">Get Free Shipped products in Time!</h6>
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="d-flex flex-wrap align-items-center mb-3">
-                      <div class="form-check mb-0"><input class="form-check-input" type="radio" name="shippingRadio" id="two_days_shipping" /><label class="form-check-label fs-8 text-body" for="two_days_shipping">Two days Shipping</label></div><span class="d-inline-block text-body-emphasis fw-bold ms-2">$20.00</span>
-                    </div>
-                    <div class="ps-4">
-                      <h6 class="text-body-tertiary mb-2">Est. delivery:Jun 21 – Jul 20</h6>
-                      <h6 class="text-info lh-base mb-0">Everything faster with minimum shipping fee.</h6>
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="d-flex flex-wrap align-items-center mb-3">
-                      <div class="form-check mb-0"><input class="form-check-input" type="radio" name="shippingRadio" id="standard_shipping" /><label class="form-check-label fs-8 text-body" for="standard_shipping">Standard Shipping</label></div><span class="d-inline-block text-body-emphasis fw-bold ms-2">$10.00</span>
-                    </div>
-                    <div class="ps-4">
-                      <h6 class="text-body-tertiary mb-2">Est. delivery:Jun 21 – Jul 20</h6>
-                      <h6 class="text-info lh-base mb-0">Get timely delivery with economy shipping.</h6>
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="d-flex flex-wrap align-items-center mb-3">
-                      <div class="form-check mb-0"><input class="form-check-input" type="radio" name="shippingRadio" checked="checked" id="one_day_shipping" /><label class="form-check-label fs-8 text-body" for="one_day_shipping">One day Shipping</label></div><span class="d-inline-block text-body-emphasis fw-bold ms-2">$30.00</span><span class="badge badge-phoenix badge-phoenix-warning ms-2 ms-lg-4 ms-xl-2">Popular</span>
-                    </div>
-                    <div class="ps-4">
-                      <h6 class="text-body-tertiary mb-2">Est. delivery:Jun 21 – Jul 20</h6>
-                      <h6 class="text-info lh-base mb-0">Highest priority shipping at the lowest cost.</h6>
-                    </div>
-                  </div>
-                </div>
+
+
                 <hr class="my-6">
                 <h3 class="mb-5">Payment Method</h3>
                 <div class="row g-4 mb-7">
-                  <div class="col-12">
+                  <!-- <div class="col-12">
                     <div class="row gx-lg-11">
                       <div class="col-12 col-md-auto">
                         <div class="d-flex">
@@ -173,23 +149,35 @@
                         </div>
                       </div>
                       <div class="col-12 col-md-auto">
-                        <div class="form-check"><input class="form-check-input" id="paypal" type="radio" name="paymentMethod" /><label class="form-check-label fs-8 text-body" for="paypal">Paypal </label></div>
+                        <div class="form-check"><input class="form-check-input" id="paypal" type="radio" name="paymentMethod" /><label class="form-check-label fs-8 text-body" for="paypal">Paystack </label></div>
                       </div>
                       <div class="col-12 col-md-auto">
                         <div class="form-check"><input class="form-check-input" id="coupon" type="radio" name="paymentMethod" /><label class="form-check-label fs-8 text-body" for="coupon">Coupon </label></div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-md-6"><label class="form-label fs-8 text-body-highlight ps-0 text-transform-none" for="selectCard">Select card</label><select class="form-select text-body-emphasis" id="selectCard">
+                  </div> -->
+                  <!-- <div class="col-md-6"><label class="form-label fs-8 text-body-highlight ps-0 text-transform-none" for="selectCard">Select card</label><select class="form-select text-body-emphasis" id="selectCard">
                       <option selected="selected">select a card</option>
                       <option value="visa">Visa</option>
                       <option value="discover">Discover</option>
                       <option value="mastercard">Mastercard</option>
                       <option value="american-express">American Express</option>
-                    </select></div>
-                  <div class="col-md-6"><label class="form-label fs-8 text-body-highlight ps-0 text-transform-none" for="inputCardNumber">Card number</label><input class="form-control" id="inputCardNumber" type="number" placeholder="Enter card number" aria-label="Card number" /></div>
-                  <div class="col-12"><label class="form-label fs-8 text-body-highlight ps-0 text-transform-none" for="inputName">Full name</label><input class="form-control" id="inputName" type="text" placeholder="Ansolo Lazinatov" aria-label="Full name" /></div>
-                  <div class="col-md-6"><label class="form-label fs-8 text-body-highlight ps-0 text-transform-none">Expires on</label>
+                    </select></div> -->
+
+                  <!-- <div class="col-md-6"><label class="form-label fs-8 text-body-highlight ps-0 text-transform-none" for="inputCardNumber">Card number</label><input class="form-control" id="inputCardNumber" type="number" placeholder="Enter card number" aria-label="Card number" /></div> -->
+                  <div class="col-12"><label class="form-label fs-8 text-body-highlight ps-0 text-transform-none" for="inputName">First name</label><input class="form-control" id="first-name" type="text" placeholder="Ansolo" aria-label="Full name" /></div>
+                  <div class="col-12"><label class="form-label fs-8 text-body-highlight ps-0 text-transform-none" for="inputName">Last name</label><input class="form-control" id="last-name" type="text" placeholder="Lazinatov" aria-label="Full name" /></div>
+                  <!-- <div class="col-12"><label class="form-label fs-8 text-body-highlight ps-0 text-transform-none" for="inputName">email</label><input class="form-control" id="email-address" type="text" placeholder="intelliagric@gmail.com" aria-label="Full name" /></div> -->
+                  
+                  <div class="col-12"><label class="form-label fs-8 text-body-highlight ps-0 text-transform-none" for="inputName">Amount</label><input class="form-control" id="amount" type="text" placeholder="GHC" aria-label="Full name" /></div>
+              
+
+                  <div class="form-item">
+                      <label class="form-label my-3">Email Address<sup>*</sup></label>
+                      <input type="email" id="email-address" class="form-control">
+                  </div>
+
+                  <!-- <div class="col-md-6"><label class="form-label fs-8 text-body-highlight ps-0 text-transform-none">Expires on</label>
                     <div class="d-flex"><select class="form-select text-body-emphasis me-3">
                         <option selected="selected">Month</option>
                         <option>January</option>
@@ -235,13 +223,16 @@
                   <div class="col-md-6"><label class="form-label fs-8 text-body-highlight ps-0 text-transform-none" for="inputCardCVC">CVC</label><input class="form-control" id="inputCardCVC" type="number" placeholder="Enter a valid CVC" aria-label="CVC" /></div>
                   <div class="col-12">
                     <div class="form-check"><input class="form-check-input" id="gridCheck" type="checkbox" /><label class="form-check-label text-body-emphasis fs-8" for="gridCheck">Save Card Details</label></div>
-                  </div>
+                  </div> -->
+                  
                 </div>
+                
                 <div class="row g-2 mb-5 mb-lg-0">
-                  <div class="col-md-8 col-lg-9 d-grid"><button class="btn btn-primary" type="submit">Pay $<?= $amount ?></button></div>
+                  <div class="col-md-8 col-lg-9 d-grid"><button class="btn btn-primary" type="submit" id="payButton" onclick="redirectToPayment()">Pay $<?= $amount ?></button></div>
                   <div class="col-md-4 col-lg-3 d-grid"><button class="btn btn-phoenix-secondary text-nowrap" type="submit">Save Order and Exit</button></div>
                 </div>
               </form>
+
             </div>
             <div class="col-lg-5 col-xl-4">
               <div class="card mt-3 mt-lg-0">
@@ -251,7 +242,10 @@
                   </div>
                   <div class="border-dashed border-bottom border-translucent mt-4">
                     <div class="ms-n2">
+
                       <?php 
+                      global $result; // Access the global $result variable
+
                       $i = 0;
                        if ($result!=false) {
                          while($i<count($result))
@@ -259,9 +253,6 @@
                            $product=get_product_by_id_ctr($result[$i]['p_id']);
                        ?>
 
-                      
-                      
-                      
 
                       <div class="row align-items-center mb-2 g-3">
                         <div class="col-8 col-md-7 col-lg-8">
@@ -315,7 +306,8 @@
               </div>
             </div>
           </div>
-        </div><!-- end of .container-->
+        </div>
+        <!-- end of .container-->
       </section><!-- <section> close ============================-->
       <!-- ============================================-->
 
@@ -324,11 +316,91 @@
     <!-- ===============================================-->
 
 
-    <?php include "../../../components/footer.php"  ?>
+    <?php 
+    // include "../../../components/footer.php"  
+    ?>
     <?php include "../../../components/small_footer.php" ?>
 
 
   </main>
+
+
+
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("payButton").addEventListener("click", payWithPaystack);
+  });
+
+  function payWithPaystack() {
+
+    var user_id = <?php echo isset($_SESSION['id']) ? $_SESSION['id'] : 'null'; ?>;
+
+    var email = document.getElementById('email-address').value;
+    var amount = document.getElementById('amount').value;
+    var firstName = document.getElementById('first-name').value;
+    var lastName = document.getElementById('last-name').value;
+
+    console.log("User ID: ", user_id);
+    console.log("Email: ", email);
+    console.log("Amount: ", amount);
+    console.log("First Name: ", firstName);
+    console.log("Last Name: ", lastName);
+
+    if (!email || !amount) {
+      alert("Please fill in email and amount fields.");
+      return;
+    }
+
+    var handler = PaystackPop.setup({
+      key: 'pk_test_e679735d3c92632af80d5513fbf7c47f653c14bf', // Replace with your public key
+      email: email,
+      amount: amount * 100, 
+      currency: 'GHS',
+      totalamount: amount,
+      ref: "" + Math.floor(Math.random() * 1000000000 + 1), // Replace with a reference you generated
+      metadata: {
+        custom_fields: [
+          {
+            display_name: "Customer Id",
+            variable_name: "Customer_Id",
+            value: user_id
+          },
+          {
+            display_name: "amount",
+            variable_name: "amount",
+            value: amount
+          },
+          {
+            display_name: "First Name",
+            variable_name: "first_name",
+            value: firstName
+          },
+          {
+            display_name: "Last Name",
+            variable_name: "last_name",
+            value: lastName
+          }
+        ]
+      },
+      callback: function(response) {
+        var reference = response.reference;
+        console.log('Payment complete! Reference: ', reference);
+        alert('Payment complete! Reference: ' + reference);
+        window.location.href = "../../../../actions/marketplace/paystack_payment_action?reference=" + reference;
+      },
+      onClose: function() {
+        console.log('Transaction was not completed, window closed.');
+        alert('Transaction was not completed, window closed.');
+      },
+    });
+    handler.openIframe();
+  }
+</script>
+
+
+
 
     <!-- ===============================================-->
     <!--    JavaScripts-->

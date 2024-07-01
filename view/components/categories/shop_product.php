@@ -70,7 +70,7 @@
         <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link ps-0 active" href="index.php">Home</a></li>
         <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="favourite-stores.php">My Favorites Farmers</a></li>
         <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="products-filter.php">Farm Produce</a></li>
-        <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="wishlist.html">Wishlist</a></li>
+        <!-- <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="wishlist.html">Wishlist</a></li> -->
         <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="shipping-info.html">Shipping Info</a></li>
         <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="../../../admin_index.php">Be a vendor</a></li>
         <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="order-tracking.php">Track order</a></li>

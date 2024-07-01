@@ -5,7 +5,8 @@
 <!--    Import html Head -->
 <!-- ===============================================-->
 
-<?php include "components/ecommerce_html_head.php";
+<?php 
+include "components/ecommerce_html_head.php";
 include_once("../../../../functions/marketplace/cart_view_func.php");
 ?>
 
@@ -29,7 +30,7 @@ include_once("../../../../functions/marketplace/cart_view_func.php");
     
       <!-- ============================================-->
       <!-- <section> begin ============================-->
-      <section class="pt-5 pb-9">
+      <section class="pt-5 pb-400">
         <div class="container-small cart">
           <h2 class="mb-6">Cart</h2>
           
@@ -43,8 +44,10 @@ include_once("../../../../functions/marketplace/cart_view_func.php");
     <!--    Insert ChatBot Here-->
     <!-- ===============================================-->
 
-    <?php include "components/footer.php"  ?>
-    <?php include "../../../components/footer.php" ?>
+    <?php 
+    // include "../../../components/footer.php"  
+    ?>
+    <?php include "../../../components/small_footer.php" ?>
 
 
     </main>
@@ -59,6 +62,28 @@ include_once("../../../../functions/marketplace/cart_view_func.php");
             document.getElementById('checkoutFormCart').submit(); // Submit the form
         });
     </script>
+
+    <script>
+      $(document).ready(function() {
+        $('#cartLink').on('click', function(e) {
+          e.preventDefault(); // Prevent the default link behavior
+
+          $.ajax({
+            url: 'cart_handler.php', // URL to your PHP handler file
+            method: 'POST',
+            data: { action: 'show_cart_full' },
+            success: function(response) {
+              // You can update your UI with the response here
+              console.log(response);
+            },
+            error: function(xhr, status, error) {
+              console.error('AJAX Error: ', status, error);
+            }
+          });
+        });
+      });
+    </script>
+    
     <script src="../../../vendors/popper/popper.min.js"></script>
     <script src="../../../vendors/bootstrap/bootstrap.min.js"></script>
     <script src="../../../vendors/anchorjs/anchor.min.js"></script>

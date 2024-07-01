@@ -8,7 +8,7 @@
 
 
         <a class="icon-nav-item" href="../../farmShop/landing/farm_shop_homepage.php" onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)">
-            <div class="icon-container mb-2" style="width: 200px; height: 80px; position: relative; overflow: hidden;">
+            <div class="icon-container mb-2" style="width: 400px; height: 80px; position: relative; overflow: hidden;">
                 <span class="fs-4 uil uil-shopping-bag" style="font-size: 48px; position: absolute; z-index: 2; transition: opacity 0.3s;"> </span>
                 <img src="../../../assets/img/new_img/farm_shop.jpg" alt="Image Description" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1; transition: transform 0.3s;">
             </div>
@@ -16,14 +16,14 @@
         </a>
 
         <a class="icon-nav-item" href="market_homepage.php" onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)">
-            <div class="icon-container mb-2" style="width: 200px; height: 80px; position: relative; overflow: hidden;">
+            <div class="icon-container mb-2" style="width: 400px; height: 80px; position: relative; overflow: hidden;">
                 <span class="fs-4 uil uil-shopping-bag" style="font-size: 48px; position: absolute; z-index: 2; transition: opacity 0.3s;"> </span>
                 <img src="../../../assets/img/new_img/farm_produce.jpeg" alt="Image Description" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1; transition: transform 0.3s;">
             </div>
             <p class="nav-label">FARM MARKET PLACE</p>
         </a>
 
-        <a class="icon-nav-item" href="#!" onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)">
+        <!-- <a class="icon-nav-item" href="#!" onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)">
             <div class="icon-container mb-2" style="width: 200px; height: 80px; position: relative; overflow: hidden;">
                 <span class="fs-4 uil uil-shopping-bag" style="font-size: 48px; position: absolute; z-index: 2; transition: opacity 0.3s;"> </span>
                 <img src="../../../assets/img/new_img/farm_land.jpg" alt="Image Description" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1; transition: transform 0.3s;">
@@ -37,7 +37,7 @@
                 <img src="../../../assets/img/new_img/equipment_hiring.jpg" alt="Image Description" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1; transition: transform 0.3s;">
             </div>
             <p class="nav-label">EQUIPMENT HIRING</p>
-        </a>
+        </a> -->
 
       </div>
     </div>

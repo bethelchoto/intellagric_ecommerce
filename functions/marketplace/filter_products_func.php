@@ -11,9 +11,10 @@ function displayFilterProducts(){
             <div class="product-card-container h-100">
             <div class="position-relative text-decoration-none product-card h-100">
                 <div class="d-flex flex-column justify-content-between h-100">
-                <div>
+                <div >
                     <div class="border border-1 border-translucent rounded-3 position-relative mb-3"><button class="btn btn-wish btn-wish-primary z-2 d-toggle-container" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><span class="fas fa-heart d-block-hover"></span><span class="far fa-heart d-none-hover"></span></button>
-                    <img class="img-fluid" src="../../../../upload/marketplace/<?php echo $filteredproduct["product_image"];?>" alt="" /></div><a class="stretched-link" href="product-details.html"> 
+                    <img class="img-fluid" src="../../../../upload/marketplace/<?php echo $filteredproduct["product_image"];?>" alt="" /></div>
+                    <a class="stretched-link" href="product-details.php?id=<?php echo $filteredproduct['product_id']; ?>"> 
                     <h6 class="mb-2 lh-sm line-clamp-3 product-name"><?php echo $filteredproduct["product_title"]?></h6>
                     </a>
                     <!-- <p class="fs-9"><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="text-body-quaternary fw-semibold ms-1">(67 people rated)</span></p> -->
