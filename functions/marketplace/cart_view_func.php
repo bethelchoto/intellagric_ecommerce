@@ -16,7 +16,6 @@ function show_cart_full($id){
 	$i=0;
 	$total=0;
     $discount=0;
-
     ?>	
 	
     <div class="row g-5">
