@@ -16,6 +16,7 @@ function show_cart_full($id){
 	$i=0;
 	$total=0;
     $discount=0;
+
     ?>	
 	
     <div class="row g-5">
@@ -129,7 +130,7 @@ function show_cart_full($id){
             <h4 class="mb-">$<?= $total - $discount?></h4>
             </div>
                 <form id="checkoutFormCart" action="checkout.php" method="post" style="display: none;">
-                    <input type="hidden" name="amount" value="<?= $total - $discount ?>">
+                    <input type="hidden" id ="amount" name="amount" value="<?= $total - $discount ?>">
                     <input type="hidden" name="result" value='<?php echo json_encode($result);?>'>
                 </form>
                 <button class="btn btn-primary w-100" id="checkoutLinkCart">Proceed to check out<span class="fas fa-chevron-right ms-1 fs-10"></span>
@@ -141,3 +142,29 @@ function show_cart_full($id){
     </div>
 
 <?php } ?>
+
+
+<?php
+
+function show_invoice($id) {
+    $bestoffers = get_all_products_ctr(); 
+
+    $ip = $_SERVER['REMOTE_ADDR'];
+
+	if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+		$ip = $_SERVER['HTTP_CLIENT_IP'];
+	} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+		$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+	}
+
+	$result=show_cart_ctr($id,$ip);
+
+    foreach ($bestoffers as $bestoffer): ?>
+       
+    <?php endforeach;
+}
+
+?>
+
+
+

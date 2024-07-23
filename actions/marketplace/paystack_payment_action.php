@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . "/../controllers/general_controller.php");
+require_once("../../controllers/marketplace/product_controller.php");
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
@@ -35,14 +35,15 @@ if ($err) {
             break;
         }
     }
-    if(add_orders_payment($customer_id, $data)){
+
+    if(addpayments_ctr($customer_id, $data)){
 
       // delete items from the cart when payment is successfull
-      delete_cart($customer_id);
+      deletecartitem_ctr($customer_id);
 
       echo '<script>
         alert("Order Placed");
-        window.location.href = "receipts.php?customer_id=' . $customer_id . '";
+        window.location.href = "../../view/apps/e-commerce/landing/invoice.php?customer_id=' . $customer_id . '";
       </script>';
 
       }

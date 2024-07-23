@@ -75,13 +75,29 @@ function show_cart_ctr($cid,$ip){
 	return $showcart->show_cart($cid,$ip);
 }
 
-function deletecartitem_ctr($cid, $pid){
-	$delcart=new product_model();
-	return $delcart->deletecartitem($cid, $pid);
+function deletecartitem_ctr($user_id){
+    $general_class = new product_model();
+    $element = $general_class->deletecartitem($user_id);
+    return $element;
+
 }
 
+function addpayments_ctr($user_id, $data){
+    // Create an instance of the general class
+    $general_class = new product_model();
+    $element = $general_class->add_orders_mdl($user_id, $data);
+    return $element;
+}
 
+function user_receipt_ctr($user_id){
+    $general_class = new product_model();
+    return $general_class->user_receipt_mdl($user_id);
+}
 
-
+function get_all_order_products_ctr($order_id){
+    $general_class = new product_model();
+    $products_receipt = $general_class->products_receipt_mdl($order_id);
+    return $products_receipt;
+}
 
 ?>
