@@ -74,7 +74,7 @@
             <div class="row g-3 mb-9">
               <div class="col-12">
                 <div class="whooping-banner w-100 rounded-3 overflow-hidden" style="height: 360px; position: relative;color:green;">
-                  <div class="bg-holder z-n1 product-bg" style="background-image:url(../../../assets/img/new_img/home.png);background-position: bottom right;"></div>
+                  <div class="bg-holder z-n1 product-bg" style="background-image:url(../../../assets/img/new_img/2.png);background-position: bottom right;"></div>
                   <div class="bg-holder z-n1 shape-bg" style="background-image:url(../../../assets/img/e-commerce/whooping_banner_shape_2.png);background-position: bottom left;"></div>
                   
                     <div class="banner-text" data-bs-theme="light">
@@ -115,10 +115,7 @@
       <!--    Import ChatBot from components-->
       <!-- ===============================================-->
       
-
-      <?php 
-      // include "../../../components/footer.php"
-      ?>
+      <?php include "components/chat.php" ?>
 
       
     <!-- ===============================================-->

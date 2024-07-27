@@ -70,14 +70,14 @@
 
       <ul class="navbar-nav justify-content-end align-items-center">
         <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link ps-0 active" href="index.php">Home</a></li>
-        <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="favourite-stores.php">My Favorites Farmers</a></li>
+        <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="https://intelli-agric-react-app.vercel.app/">Visit Chat</a></li>
         <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="products-filter.php">Farm Produce</a></li>
         <!-- <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="wishlist.html">Wishlist</a></li> -->
         <!-- <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="shipping-info.html">Shipping Info</a></li> -->
 
 
         <?php if (isAdmin()): ?>
-          <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="../../../admin_index.php">Admin Dashboard</a></li>
+          <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="../admin/add-product.php">Admin Dashboard</a></li>
         <?php else: ?>
           <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="../../../admin_index.php">Be a vendor</a></li>
         <?php endif; ?>
