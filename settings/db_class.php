@@ -23,7 +23,7 @@ class db_connection
 	function db_connect(){
 		
 		//connection
-		$this->db = mysqli_connect(SERVER,USERNAME,PASSWD,DATABASE, PORT);
+		$this->db = mysqli_connect(SERVER,USERNAME,PASSWD,DATABASE);
 		
 		//test the connection
 		if (mysqli_connect_errno()) {
@@ -36,7 +36,7 @@ class db_connection
 	function db_conn(){
 		
 		//connection
-		$this->db = mysqli_connect(SERVER,USERNAME,PASSWD,DATABASE, PORT);
+		$this->db = mysqli_connect(SERVER,USERNAME,PASSWD,DATABASE);
 		
 		//test the connection
 		if (mysqli_connect_errno()) {

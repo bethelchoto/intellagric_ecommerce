@@ -1,6 +1,7 @@
 <?php
 
 require_once("../../controllers/marketplace/product_controller.php");
+include_once("../../settings/core.php");
 
 $curl = curl_init();
 curl_setopt_array($curl, array(

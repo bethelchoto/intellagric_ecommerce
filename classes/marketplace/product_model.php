@@ -8,7 +8,7 @@
 
 //import database class
 require_once(__DIR__ . "/../../settings/db_class.php");
-require_once(__DIR__ . "/../../settings/core.php");
+include_once(__DIR__ . "/../../settings/core.php");
 
 class product_model extends db_connection
 {

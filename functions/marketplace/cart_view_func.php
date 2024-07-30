@@ -1,6 +1,6 @@
 <?php
 
-include_once dirname(__DIR__)."\..\controllers\marketplace\product_controller.php";
+require_once(__DIR__ . "/../../controllers/marketplace/product_controller.php");
 
 global $total;
 function show_cart_full($id){
